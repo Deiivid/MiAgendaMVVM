@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+    <variable
+        name="modelo"
+        type="com.example.miagendamvvm.viewmodel.MainViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+
+            android:id="@+id/etBuscar"
+            android:hint="@string/buscar_personal"
+            android:singleLine="true"
+            android:imeOptions="actionSearch"
+            tools:ignore="MissingConstraints"
+            android:text="@={modelo.parametroBusqueda}"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/miRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9"
+            tools:ignore="MissingConstraints" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnAbrirFormulario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_add_circle"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+</layout>

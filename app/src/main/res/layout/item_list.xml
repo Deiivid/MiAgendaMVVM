@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="10dp"
+        app:cardCornerRadius="8dp"
+        app:cardBackgroundColor="@color/gris">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_face"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp">
+            <TextView
+                android:id="@+id/tvNombre"
+                android:textStyle="bold"
+                style="@style/item_list_style"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tvTelefono"
+                android:layout_width="match_parent"
+                style="@style/item_list_style"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:drawableStart="@drawable/ic_phone"/>
+            <TextView
+                android:id="@+id/tvEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                style="@style/item_list_style"
+                android:drawableStart="@drawable/ic_email"
+                />
+            <TextView
+                android:id="@+id/tvEdad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                style="@style/item_list_style"
+                android:drawableStart="@drawable/ic_person"
+                />
+                </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="modelo"
+            type="com.example.miagendamvvm.viewmodel.FormularioViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.FormularioActivity">
+
+        <EditText
+            android:id="@+id/etNombre"
+            android:hint="@string/nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@={modelo.nombre}"/>
+
+        <EditText
+            android:id="@+id/etApellidos"
+            android:hint="@string/apellidos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etNombre"
+            android:layout_marginTop="5dp"
+            android:text="@={modelo.apellidos}"/>
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:hint="@string/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etApellidos"
+            android:layout_marginTop="5dp"
+            android:inputType="textEmailAddress"
+            android:text="@={modelo.email}"/>
+
+        <EditText
+            android:id="@+id/etTelefono"
+            android:hint="@string/telefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etEmail"
+            android:layout_marginTop="5dp"
+            android:inputType="phone"
+            android:text="@={modelo.telefono}"/>
+
+        <EditText
+            android:id="@+id/etEdad"
+            android:hint="@string/edad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etTelefono"
+            android:layout_marginTop="5dp"
+            android:inputType="number"
+            android:text="@={``+modelo.edad}"/>
+
+        <Button
+            android:id="@+id/btnGuardar"
+            android:hint="@string/guardar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etEdad"
+            android:onClick="@{()->modelo.guardarUsuario()}"/>
+
+        <LinearLayout
+            android:id="@+id/linearEditar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etEdad"
+            android:gravity="center_horizontal"
+            android:visibility="gone"
+            >
+
+            <Button
+                android:id="@+id/btnEditar"
+                android:hint="@string/editar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:onClick="@{()->modelo.guardarUsuario()}"/>
+            <Button
+                android:id="@+id/btnBorrar"
+                android:hint="@string/borrar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
